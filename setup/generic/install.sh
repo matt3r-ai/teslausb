@@ -37,7 +37,8 @@ lastpart=$(sfdisk -l "$rootdev" | tail -1 | awk '{print $1}')
 
 if [ "$rootpart" != "$lastpart" ]
 then
-  error_exit "root partition is not the last partition."
+  ## error_exit "root partition is not the last partition."
+  echo "WARNING: root partition is not the last partition."
 fi
 
 # Check if there is sufficient unpartitioned space after the root
@@ -45,8 +46,11 @@ fi
 # TODO: provide a way to skip this, to support having boot+root on
 # eMMC or sd card, and storage elsewhere
 unpart=$(sfdisk -F "$rootdev" | grep -o '[0-9]* bytes' | head -1 | awk '{print $1}')
-if [ "$unpart" -lt  $(( (1<<30) * 40)) ]
+if [ "$unpart" -lt  $(( (1<<30) * 32)) ]
 then
+
+  error_exit "Insufficient unpartitioned space: $unpart. Min 32GB needed"
+
   # There is insufficient unpartitioned space.
   # Check if we've already shrunk the root filesystem, and shrink the root
   # partition to match if it hasn't been already
