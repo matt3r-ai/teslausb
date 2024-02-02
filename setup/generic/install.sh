@@ -198,7 +198,7 @@ then
 	  echo "| /boot/teslausb_setup_variables.conf with your favorite                 |"
 	  echo "| editor, e.g. 'nano /boot/teslausb_setup_variables.conf' and fill in    |"
 	  echo "| the required variables. Instructions are in the file, and at           |"
-	  echo "| https://github.com/matt3r-ai/teslausb/blob/KYOS-266-TeslaUSB-K3YInit/doc/OneStepSetup.md  |"
+	  echo "| https://github.com/matt3r-ai/teslausb/blob/main-dev/doc/OneStepSetup.md|"
 	  echo "| (though ignore the Raspberry Pi specific bits about flashing and       |"
 	  echo "| mounting the sd card on a PC)                                          |"
 	  echo "|                                                                        |"
