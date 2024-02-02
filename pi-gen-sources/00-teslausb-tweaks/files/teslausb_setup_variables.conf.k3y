@@ -109,8 +109,8 @@ export CAM_SIZE=30G
 # edit /boot/wpa_supplicant.conf.sample and un-comment the indicated line.
 # You do not need to set these variables if networking is already configured
 # and you ran the "install.sh" script
-export SSID='b3ast'
-export WIFIPASS='Ignitek3y'
+# export SSID='b3ast'
+# export WIFIPASS='Ignitek3y'
 
 # Uncomment to use ExFAT filesystem instead of FAT32.
 # ExFAT is the filesystem used by Tesla when the drive is formatted in the car.
