@@ -14,7 +14,6 @@ on_chroot << EOF
 EOF
 
 on_chroot << EOF
-apt-get remove -y --force-yes --purge triggerhappy bluez alsa-utils
 rm -rf /boot/kernel8.img
 rm -rf /lib/modules/*-v8+
 echo "pi ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/pi-nopassword
